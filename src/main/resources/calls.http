@@ -1,0 +1,46 @@
+###
+GET localhost:8080/medications
+
+###
+POST http://localhost:8080/medications
+content-type: application/json
+
+{
+ "name": "Ibuprofen",
+ "form": "pill",
+ "strengths": "very strong"
+}
+
+###
+POST http://localhost:8080/medications/Ibuprofen/batches
+content-type: application/json
+
+{
+  "batchNo": "batch-001",
+  "quantity": 100,
+  "expiry": "2025-12-10"
+}
+###
+POST http://localhost:8080/medications/Ibuprofen/batches
+content-type: application/json
+
+{
+  "batchNo": "batch-002",
+  "quantity": 100,
+  "expiry": "2025-12-12"
+}
+###
+POST http://localhost:8080/medications/Ibuprofen/batches
+content-type: application/json
+
+{
+  "batchNo": "batch-003",
+  "quantity": 30,
+  "expiry": "2025-06-12"
+}
+
+###
+PUT http://localhost:8080/medications/Ibuprofen/quantity/54
+
+###
+GET http://localhost:8080/medications/Ibuprofen/quantity
